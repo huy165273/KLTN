@@ -1,0 +1,11 @@
+
+- Xử lý mảng nhiều chiều: ĐÃ XONG
+- Xem lại phần khới tạo mảng, xử ký phép gán khi khởi tạo mảng : ĐÃ XONG
+- Thực hiện gán, so sánh đối với các kiểu dữ liệu khác ngoài Number(đang còn thiếu phép % vì mình đang quy ra double) OKE
+-Xử lý cái lỗi ở InfixExpressionSymbolic : ĐÃ XONG
+- Zử lý phn khởi tạo và cập nhật trong vòng for : Đã Xong
+- Xử lý lại đối với tứng loại kiểu dữ lệu trong Number (xử lý riêng với %) : OKE
+- Tối ưu khi việc tách các vế không hợp lý : OKE
+- Tìm hiểu và xét các loại câu lệnh còn lại
+- THÊM CÁC BIÊN TRUYỀN VÀO VÀO BÊN TRONG variables
+- xử lý lấy kiểu dữ liệu của mảng

@@ -1,0 +1,5 @@
+JdtBase/src/Z3-win
+out/
+.idea/
+*.class
+build/
