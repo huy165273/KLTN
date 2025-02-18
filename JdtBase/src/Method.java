@@ -134,7 +134,6 @@ public class Method {
     public void readMarkV1(boolean checkC1, boolean checkC2, boolean checkC3) throws FileNotFoundException {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
 
         List<String> pathMarks = new ArrayList<>();
         for(int i = 0; i < testcases.size(); i ++){
@@ -165,7 +164,6 @@ public class Method {
     public void readMarkV2() throws FileNotFoundException {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 3);
 
         List<String> pathMarksC1 = new ArrayList<>();
         List<String> pathMarksC2 = new ArrayList<>();

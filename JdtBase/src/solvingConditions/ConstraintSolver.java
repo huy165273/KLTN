@@ -52,7 +52,7 @@ public class ConstraintSolver {
             String SMTEnd = "(check-sat)\n(get-model)\n(exit)";
 
             String SMT = SMTStart + String.join("\n", SMTCalls) + "\n" + SMTEnd;
-            File file = new File(currentPath + "\\ISM\\JdtBase\\src\\SMT\\SMT.smt2");
+            File file = new File(currentPath + "\\JdtBase\\src\\SMT\\SMT.smt2");
             try {
                 file.createNewFile();
             } catch (IOException e) {
@@ -62,7 +62,7 @@ public class ConstraintSolver {
             Z3Solving z3 = new Z3Solving();
             String result = "";
             try {
-                result = z3.solve(currentPath + "\\ISM\\JdtBase\\src\\SMT\\SMT.smt2");
+                result = z3.solve(currentPath + "\\JdtBase\\src\\SMT\\SMT.smt2");
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

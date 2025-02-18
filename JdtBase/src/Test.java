@@ -1,8 +1,4 @@
 import java.io.*;
-import json.JSONArray;
-import json.JSONObject;
-import json.parser.JSONParser;
-
 public class Test {
 public static boolean mark(String append) {
    try {
@@ -36,31 +32,18 @@ public static char grade(int averageGrade){
   }
   mark("id$35.0#line-in-function$17#offset$410#statement$return 'I';");return 'I';
 }
-public static String TEST_PATH = "";
+public static String TEST_PATH = "D:/Code/KLTN/KLTN/result/marks/gradeMarks/TestDriverResult1.txt";
 public static void main(String[] args) {
    File file;
-   try (FileReader reader = new FileReader("D:/Code/KLTN/KLTN/result/Testcases.json")) {
-   Object obj = (new JSONParser()).parse(reader);
-   JSONObject jsonObject = (JSONObject) obj;
    //TODO: Call test function
    {
-      JSONArray jsonMethod = ((JSONArray) jsonObject.get("grade"));
-      if(jsonMethod != null){
-         for(Object testpath : jsonMethod){
-            TEST_PATH = ((JSONObject) testpath).get("filepath").toString();
-            file = new File(TEST_PATH);
-            if (file.exists()) {
-               file.delete();
-            }
-            JSONArray jsonTestcases = (JSONArray) ((JSONObject) testpath).get("testcase");
-            int averageGrade;
-            averageGrade = Integer.parseInt(((JSONObject) jsonTestcases.get(0)).get("value").toString());
-            grade(averageGrade);
-         }
-      }
-   }
-   } catch (Exception e) {
-      e.printStackTrace();
+        file = new File(TEST_PATH);
+        if (file.exists()) {
+            file.delete();
+        }
+        int averageGrade;
+        averageGrade= 5;
+        grade(averageGrade);
    }
 }
 }

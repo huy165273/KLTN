@@ -59,7 +59,6 @@ public class TestDriverISM implements TestDriver {
     public void doTestDriver() {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         createMethodMarksFolder();
         StringBuilder testDrive = new StringBuilder();
 //        testDrive.append("package test;\n\nimport java.io.*;\n");
@@ -183,13 +182,11 @@ public class TestDriverISM implements TestDriver {
     }
 
     public int compileTestDriver(){
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8");
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8\\jre");
 
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
+
         try {
             return compiler.run(null, null, null,currentPath +  "result/Test.java");
         } catch (Exception e) {
@@ -201,7 +198,6 @@ public class TestDriverISM implements TestDriver {
     public boolean runTestDriver(){
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try{
             Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "result Test");
             int exitcode = pc.waitFor();
@@ -287,7 +283,6 @@ public class TestDriverISM implements TestDriver {
     private void createMethodMarksFolder() {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
 
         String folderPath = currentPath + "result/marks";
         Path tempPath;

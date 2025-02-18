@@ -28,7 +28,6 @@ public class ISMv0 {
     public void generateTestcase () throws FileNotFoundException {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 3);
 
         double startTime = System.currentTimeMillis();
         Runtime runtime = Runtime.getRuntime();
