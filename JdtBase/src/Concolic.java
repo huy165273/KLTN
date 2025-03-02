@@ -41,7 +41,7 @@ public class Concolic {
         for (Method method : methodList) {
             List<Variable> testcaseRandom = method.randomTestcase();
             method.getTestcases().add(testcaseRandom);
-            String filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
+            String filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
 
             testDriver.doTestDriver(filepathMark, testcaseRandom);
             testDriver.compileTestDriver();
@@ -79,7 +79,7 @@ public class Concolic {
 
                             if (!testcase.isEmpty()) {
                                 method.getTestcases().add(testcase);
-                                filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
+                                filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
 
                                 testDriver.doTestDriver(filepathMark, testcase);
                                 testDriver.compileTestDriver();

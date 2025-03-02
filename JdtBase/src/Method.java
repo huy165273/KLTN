@@ -138,7 +138,7 @@ public class Method {
 
         List<String> pathMarks = new ArrayList<>();
         for(int i = 0; i < testcases.size(); i ++){
-            pathMarks.add(currentPath + "result/marks/" + methodName + "Marks/TestDriverResult" + (allTestcases.size() + i + 1) + ".txt");
+            pathMarks.add(currentPath + "JdtBase/src/result/marks/" + methodName + "Marks/TestDriverResult" + (allTestcases.size() + i + 1) + ".txt");
         }
 //        System.out.println("File mark: " + pathMarks);
         if(!checkC1){
@@ -174,19 +174,19 @@ public class Method {
         for(int i = 0; i < coverC1.getAllTestcases().size(); i ++){
             int index = testcases.indexOf(coverC1.getAllTestcases().get(i));
             if(index != -1){
-                pathMarksC1.add(currentPath + "result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
+                pathMarksC1.add(currentPath + "JdtBase/src/result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
             }
         }
         for(int i = 0; i < coverC2.getAllTestcases().size(); i ++){
             int index = testcases.indexOf(coverC2.getAllTestcases().get(i));
             if(index != -1){
-                pathMarksC2.add(currentPath + "result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
+                pathMarksC2.add(currentPath + "JdtBase/src/result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
             }
         }
         for(int i = 0; i < coverC3.getAllTestcases().size(); i ++){
             int index = testcases.indexOf(coverC3.getAllTestcases().get(i));
             if(index != -1){
-                pathMarksC3.add(currentPath + "result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
+                pathMarksC3.add(currentPath + "JdtBase/src/result/marks/" + methodName + "Marks/TestDriverResult" + (index + 1) + methodName + ".txt");
             }
         }
 

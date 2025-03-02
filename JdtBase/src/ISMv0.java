@@ -28,7 +28,6 @@ public class ISMv0 {
     public void generateTestcase () throws FileNotFoundException {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 3);
 
         double startTime = System.currentTimeMillis();
         Runtime runtime = Runtime.getRuntime();
@@ -46,11 +45,11 @@ public class ISMv0 {
             JSONArray jsonMethod = new JSONArray();
             List<Variable> testcaseRandom = method.randomTestcase();
             method.getTestcases().add(testcaseRandom);
-            String filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
+            String filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
                     + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
             jsonMethod.add(addTestcaseJsonMethod(testcaseRandom, filepathMark));
             jsonObject.put(method.getMethodName(), jsonMethod);
-            writeFileJson(currentPath + "result/Testcases.json", jsonObject);
+            writeFileJson(currentPath + "JdtBase/src/result/Testcases.json", jsonObject);
             testDriver.runTestDriver();
             method.readMarkV1(false, false, false);
 
@@ -87,7 +86,7 @@ public class ISMv0 {
 
                             if(!testcase.isEmpty()){
                                 method.getTestcases().add(testcase);
-                                filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
+                                filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
                                         + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
                                 jsonMethod.add(addTestcaseJsonMethod(testcase, filepathMark));
                                 jsonObject.put(method.getMethodName(), jsonMethod);
@@ -102,7 +101,7 @@ public class ISMv0 {
                 }
 
                 if(check){
-                    writeFileJson(currentPath + "result/Testcases.json", jsonObject);
+                    writeFileJson(currentPath + "JdtBase/src/result/Testcases.json", jsonObject);
                     //                System.out.println("\nTest driver " + count);
                     testDriver.runTestDriver();
                     method.readMarkV1(checkC1, checkC2, checkC3);

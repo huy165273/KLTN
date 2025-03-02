@@ -44,11 +44,11 @@ public class ConcolicCopy1 {
             JSONArray jsonMethod = new JSONArray();
             List<Variable> testcaseRandom = method.randomTestcase();
             method.getTestcases().add(testcaseRandom);
-            String filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
+            String filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
             jsonMethod.add(addTestcaseJsonMethod(testcaseRandom, filepathMark));
             jsonObject.put(method.getMethodName(), jsonMethod);
 
-            writeFileJson(currentPath + "result/Testcases.json", jsonObject);
+            writeFileJson(currentPath + "JdtBase/src/result/Testcases.json", jsonObject);
             testDriver.compileTestDriver();
             testDriver.runTestDriver();
             method.readMarkV1(false, false, false);
@@ -86,7 +86,7 @@ public class ConcolicCopy1 {
 
                             if (!testcase.isEmpty()) {
                                 method.getTestcases().add(testcase);
-                                filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
+                                filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult" + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
                                 jsonMethod.add(addTestcaseJsonMethod(testcase, filepathMark));
                                 jsonObject.put(method.getMethodName(), jsonMethod);
 
@@ -100,7 +100,7 @@ public class ConcolicCopy1 {
                     i--;
                 }
                 if (check) {
-                    writeFileJson(currentPath + "result/Testcases.json", jsonObject);
+                    writeFileJson(currentPath + "JdtBase/src/result/Testcases.json", jsonObject);
                     testDriver.compileTestDriver();
                     testDriver.runTestDriver();
                     method.readMarkV1(checkC1, checkC2, checkC3);

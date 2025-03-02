@@ -59,10 +59,9 @@ public class TestDriverISM implements TestDriver {
     public void doTestDriver() {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         createMethodMarksFolder();
         StringBuilder testDrive = new StringBuilder();
-//        testDrive.append("package test;\n\nimport java.io.*;\n");
+        testDrive.append("package result;\n\n");
         testDrive.append("import java.io.*;\n");
         testDrive.append("import json.JSONArray;\n");
         testDrive.append("import json.JSONObject;\n");
@@ -76,7 +75,7 @@ public class TestDriverISM implements TestDriver {
         testDrive.append("public static void main(String[] args) {\n");
         testDrive.append("   File file;\n");
 //        functionCode.append("   JSONParser jsonParser = new JSONParser();\n");
-        testDrive.append("   try (FileReader reader = new FileReader(\"" + currentPath + "result/Testcases.json\")) {\n");
+        testDrive.append("   try (FileReader reader = new FileReader(\"" + currentPath + "JdtBase/src/result/Testcases.json\")) {\n");
         testDrive.append("   Object obj = (new JSONParser()).parse(reader);\n");
         testDrive.append("   JSONObject jsonObject = (JSONObject) obj;\n");
         testDrive.append("   //TODO: Call test function\n");
@@ -172,7 +171,7 @@ public class TestDriverISM implements TestDriver {
         testDrive.append("}\n");
 
         String newJavaCode = testDrive.toString();
-        String filePath =currentPath + "result/Test.java";
+        String filePath =currentPath + "JdtBase/src/result/Test.java";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
             writer.write(newJavaCode);
@@ -183,15 +182,14 @@ public class TestDriverISM implements TestDriver {
     }
 
     public int compileTestDriver(){
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8");
+//        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8");
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8\\jre");
+//        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8\\jre");
 
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try {
-            return compiler.run(null, null, null,currentPath +  "result/Test.java");
+            return compiler.run(null, null, null,currentPath +  "JdtBase/src/result/Test.java");
         } catch (Exception e) {
             System.out.println("Compilation failed");
         }
@@ -201,9 +199,8 @@ public class TestDriverISM implements TestDriver {
     public boolean runTestDriver(){
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try{
-            Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "result Test");
+            Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "JdtBase/src/result Test");
             int exitcode = pc.waitFor();
             return exitcode == 0;
         } catch (IOException | InterruptedException e) {
@@ -289,7 +286,7 @@ public class TestDriverISM implements TestDriver {
         currentPath = currentPath.replace("\\", "/") + "/";
 //        currentPath = currentPath.substring(0, currentPath.length() - 5);
 
-        String folderPath = currentPath + "result/marks";
+        String folderPath = currentPath + "JdtBase/src/result/marks";
         Path tempPath;
         try {
             for(Method method : methods){

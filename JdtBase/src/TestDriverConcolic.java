@@ -90,7 +90,7 @@ public class TestDriverConcolic {
         testDrive.append("}\n");
 
         String newJavaCode = testDrive.toString();
-        String filePath = currentPath + "result/Test.java";
+        String filePath = currentPath + "JdtBase/src/result/Test.java";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
             writer.write(newJavaCode);
@@ -109,7 +109,7 @@ public class TestDriverConcolic {
         currentPath = currentPath.replace("\\", "/") + "/";
 //        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try {
-            return compiler.run(null, null, null,currentPath +  "result/Test.java");
+            return compiler.run(null, null, null,currentPath +  "JdtBase/src/result/Test.java");
         } catch (Exception e) {
             System.out.println("Compilation failed");
         }
@@ -121,7 +121,7 @@ public class TestDriverConcolic {
         currentPath = currentPath.replace("\\", "/") + "/";
 //        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try{
-            Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "result Test");
+            Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "JdtBase/src/result Test");
             int exitcode = pc.waitFor();
             return exitcode == 0;
         } catch (IOException | InterruptedException e) {
@@ -204,7 +204,7 @@ public class TestDriverConcolic {
     }
 
     private void createMethodMarksFolder() {
-        String folderPath = "result/marks";
+        String folderPath = "JdtBase/src/result/marks";
         Path tempPath;
         try {
             for (Method method : methods) {
