@@ -41,7 +41,6 @@ public class TestDriverConcolic {
     public void doTestDriver(String filepathMark, List<Variable> testcase) {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
 
         createMethodMarksFolder();
         StringBuilder testDrive = new StringBuilder();
@@ -101,13 +100,10 @@ public class TestDriverConcolic {
     }
 
     public int compileTestDriver(){
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8");
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8\\jre");
 
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try {
             return compiler.run(null, null, null,currentPath +  "JdtBase/src/result/Test.java");
         } catch (Exception e) {
@@ -119,7 +115,6 @@ public class TestDriverConcolic {
     public boolean runTestDriver(){
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
-//        currentPath = currentPath.substring(0, currentPath.length() - 5);
         try{
             Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "JdtBase/src/result Test");
             int exitcode = pc.waitFor();

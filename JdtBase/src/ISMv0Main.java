@@ -6,7 +6,7 @@ public class ISMv0Main {
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
 
-        String filePath = currentPath + "Test.java";
+        String filePath = currentPath + "/JdtBase/src/Test.java";
         ISMv0 iSMv0 = new ISMv0(filePath);
         iSMv0.generateTestcase();
     }
