@@ -1,9 +1,9 @@
 package result;
 
 import java.io.*;
-import json.JSONArray;
-import json.JSONObject;
-import json.parser.JSONParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class Test {
 public static boolean mark(String append) {

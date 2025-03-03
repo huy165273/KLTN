@@ -1,0 +1,8 @@
+id$37.0#line-in-function$2#offset$50#condition$falseNode#statement$averageGrade > 90
+id$39.0#line-in-function$5#offset$125#condition$falseNode#statement$averageGrade > 80
+id$41.0#line-in-function$8#offset$199#condition$falseNode#statement$averageGrade > 70
+id$43.0#line-in-function$11#offset$273#condition$falseNode#statement$averageGrade > 60
+id$43.0#line-in-function$11#offset$273#condition$trueNode#statement$averageGrade > 60
+id$44.0#line-in-function$11#offset$294#condition$falseNode#statement$averageGrade < 70
+id$44.0#line-in-function$11#offset$294#condition$trueNode#statement$averageGrade < 70
+id$27.0#line-in-function$12#offset$319#statement$return 'D';

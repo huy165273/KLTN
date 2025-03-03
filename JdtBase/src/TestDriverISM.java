@@ -10,10 +10,7 @@ import org.eclipse.jdt.core.dom.*;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -63,9 +60,9 @@ public class TestDriverISM implements TestDriver {
         StringBuilder testDrive = new StringBuilder();
         testDrive.append("package result;\n\n");
         testDrive.append("import java.io.*;\n");
-        testDrive.append("import json.JSONArray;\n");
-        testDrive.append("import json.JSONObject;\n");
-        testDrive.append("import json.parser.JSONParser;\n\n");
+        testDrive.append("import org.json.simple.JSONArray;\n");
+        testDrive.append("import org.json.simple.JSONObject;\n");
+        testDrive.append("import org.json.simple.parser.JSONParser;\n\n");
         testDrive.append("public class ").append("Test").append(" {");
         addMarkFunction(testDrive);
         for (Method method : methods) {
@@ -182,10 +179,7 @@ public class TestDriverISM implements TestDriver {
     }
 
     public int compileTestDriver(){
-//        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8");
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-//        System.setProperty("java.home", "C:\\Program Files\\Java\\jdk-1.8\\jre");
-
         String currentPath = Paths.get("").toAbsolutePath().toString();
         currentPath = currentPath.replace("\\", "/") + "/";
         try {
@@ -196,11 +190,19 @@ public class TestDriverISM implements TestDriver {
         return 0;
     }
 
-    public boolean runTestDriver(){
+    public boolean runTestDriver() {
         String currentPath = Paths.get("").toAbsolutePath().toString();
-        currentPath = currentPath.replace("\\", "/") + "/";
-        try{
-            Process pc = Runtime.getRuntime().exec("java -cp " + currentPath +  "JdtBase/src/result Test");
+        try {
+            String command = "java -cp \"" + currentPath + "\\JdtBase\\jdt\\json_simple-1.0.2.jar;" + currentPath + "\\JdtBase\\src\" result.Test";
+            Process pc = Runtime.getRuntime().exec(command);
+
+            // In lỗi nếu có (debug)
+            BufferedReader errorReader = new BufferedReader(new InputStreamReader(pc.getErrorStream()));
+            String line;
+            while ((line = errorReader.readLine()) != null) {
+                System.out.println("Error: " + line);
+            }
+
             int exitcode = pc.waitFor();
             return exitcode == 0;
         } catch (IOException | InterruptedException e) {

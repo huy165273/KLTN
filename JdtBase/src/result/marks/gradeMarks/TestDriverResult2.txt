@@ -1,0 +1,6 @@
+id$37.0#line-in-function$2#offset$50#condition$falseNode#statement$averageGrade > 90
+id$39.0#line-in-function$5#offset$125#condition$falseNode#statement$averageGrade > 80
+id$41.0#line-in-function$8#offset$199#condition$falseNode#statement$averageGrade > 70
+id$43.0#line-in-function$11#offset$273#condition$falseNode#statement$averageGrade > 60
+id$45.0#line-in-function$14#offset$347#condition$falseNode#statement$averageGrade > 0
+id$35.0#line-in-function$17#offset$410#statement$return 'I';

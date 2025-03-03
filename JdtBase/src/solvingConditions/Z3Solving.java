@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class Z3Solving {
     public String solve(String filePath) throws IOException, InterruptedException {
         Path absolutePath = Paths.get("").toAbsolutePath();
-        String addPath = absolutePath + "\\ISM\\JdtBase\\src\\Z3-win\\bin\\z3.exe";
+        String addPath = absolutePath + "\\JdtBase\\src\\Z3-win\\bin\\z3.exe";
         String commandLine = addPath + " -smt2 " + "\"" + filePath + "\"";
 //        System.out.println(commandLine);
         ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", commandLine);
