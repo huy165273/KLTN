@@ -1,6 +1,0 @@
-id$37.0#line-in-function$2#offset$50#condition$falseNode#statement$averageGrade > 90
-id$39.0#line-in-function$5#offset$125#condition$falseNode#statement$averageGrade > 80
-id$39.0#line-in-function$5#offset$125#condition$trueNode#statement$averageGrade > 80
-id$40.0#line-in-function$5#offset$146#condition$falseNode#statement$averageGrade < 90
-id$40.0#line-in-function$5#offset$146#condition$trueNode#statement$averageGrade < 90
-id$15.0#line-in-function$6#offset$171#statement$return 'B';
