@@ -1,6 +1,7 @@
 import cfg.ICFG;
 import cfg.generation.CFGGeneration;
 import cfg.generation.CFGGenerationSubCondition;
+import cfg.generation.testpath.Testpath;
 import cfg.generation.testpath.TestpathGeneration;
 import cfg.nodes.ICfgNode;
 import org.eclipse.jdt.core.dom.*;
@@ -59,7 +60,24 @@ public class SimpleClassFileParser extends Object implements IJdtParser {
 
 				TestpathGeneration testpathGen = new TestpathGeneration(cfgsubcondition);
 				testpathGen.generateTestpaths();
+// day la doan tao them vao de tes
+				//System.out.println("tesst: " + testpathGen.generateTestpaths());
 
+
+
+
+
+// den day la het
+
+//				FullTestpaths testPaths = testpathGen.getPossibleTestpaths(); // Lấy FullTestpaths
+//				if (testPaths != null && !testPaths.isEmpty()) {
+//					int pathIndex = 1;
+//					for (ITestpath testPath : testPaths) { // FullTestpaths là một Iterable<ITestpath>
+//						System.out.println("Test Path " + pathIndex++ + ": " + testPath.toString());
+//					}
+//				} else {
+//					System.out.println("No test paths generated.");
+//				}
 
 				int startPosition = node.getStartPosition();
 				int endPosition = startPosition + node.getLength();

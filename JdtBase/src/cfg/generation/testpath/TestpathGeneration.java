@@ -82,7 +82,6 @@ public class TestpathGeneration implements ITestpathGeneration {
     public void generateTestpaths() {
         Date startTime = Calendar.getInstance().getTime();
         FullTestpaths testpaths_ = new FullTestpaths();
-
         ICfgNode beginNode = this._cfg.getBeginNode();
         FullTestpath initialTestpath = new FullTestpath();
         initialTestpath.setFunctionNode(this._cfg.getFunctionNode());
@@ -97,7 +96,10 @@ public class TestpathGeneration implements ITestpathGeneration {
             tp.setFunctionNode(this._cfg.getFunctionNode());
 
         possibleTestpaths = testpaths_;
+        //
 
+        System.out.println(" All Test Paths : " +possibleTestpaths.toString());
+        //
         // Calculate the running time
         Date end = Calendar.getInstance().getTime();
         totalRunningTime = end.getTime() - startTime.getTime();
