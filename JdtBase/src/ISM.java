@@ -95,7 +95,7 @@ public class ISM {
 
                             if(!testcase.isEmpty()){
                                 method.getTestcases().add(testcase);
-                                filepathMark = currentPath + "result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
+                                filepathMark = currentPath + "JdtBase/src/result/marks/" + method.getMethodName() + "Marks/TestDriverResult"
                                         + (method.getAllTestcases().size() + method.getTestcases().size()) + ".txt";
                                 jsonMethod.add(addTestcaseJsonMethod(testcase, filepathMark));
                                 jsonObject.put(method.getMethodName(), jsonMethod);
